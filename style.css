@@ -27,13 +27,13 @@ body, html {
 .circle::before {
     content: '';
     position: absolute;
-    top: -25px;
-    left: -25px;
-    right: -25px;
-    bottom: -25px;
-    background: radial-gradient(closest-side, #fb5dad, transparent), radial-gradient(closest-side, #55fb9f, transparent), radial-gradient(closest-side, #b97aff, transparent);
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: radial-gradient(ellipse, #fb5dad, transparent), radial-gradient(ellipse, #55fb9f, transparent), radial-gradient(ellipse, #b97aff, transparent);
     border-radius: 50%;
-    filter: blur(8px);
+    filter: blur(1px);
     animation: glow 1s linear infinite;
     
 }
@@ -59,12 +59,19 @@ body, html {
 }
 @keyframes wave {
     0% {
-        transform: scale(20);
+      background-position: 0% 50%;
     }
     50% {
-        transform: scale(30);
+      background-position: 100% 50%;
     }
     100% {
-        transform: scale(20);
+      background-position: 0% 50%;
     }
-}
+  }
+  
+  .wave-gradient {
+    background: radial-gradient(circle, #fb5dad, #55fb9f, #b97aff);
+    background-size: 200% 200%;
+    animation: wave 2s linear infinite;
+  }
+  
